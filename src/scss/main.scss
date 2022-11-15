@@ -3,14 +3,21 @@
 @import "mixins";
 @import "fonts";
 @import "settings";
+@import "global";
 
 // подключения компонентов страницы
 @import "./components/header";
+@import "./components/about";
+@import "./components/contacts";
+@import "./components/dreams";
+@import "./components/find";
+@import "./components/footer";
+@import "./components/header";
+@import "./components/key";
+@import "./components/prices";
+@import "./components/process";
+@import "./components/project";
+@import "./components/servises";
 
 // тестовые стили, удалите их
-.page__body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--vh);
-}
+
