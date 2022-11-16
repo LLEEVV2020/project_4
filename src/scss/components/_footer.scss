@@ -1,3 +1,31 @@
 .footer {
   background: linear-gradient(273.19deg, #000000 9.7%, rgba(0, 0, 0, 0.65) 89.38%);
+  // &-inner{
+  //   padding: 90px 0 40px;
+  // }
+  &-inner__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo{
+    margin-bottom: 65px;
+    display: block;
+  }
+  &-menu__list{
+    display: flex;
+  }
+  .footer__list-item + &__list-item{
+    margin-left: 80px;
+  }
+  &__list-link{
+    font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 26px;
+letter-spacing: 0.06em;
+text-transform: capitalize;
+
+color: #ffffff;
+  }
 }
