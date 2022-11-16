@@ -1,13 +1,61 @@
-.contacts{
-  background-image: url("../../img/contacts.jpg");
+.contacts {
   background-repeat: no-repeat;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2) 61.13%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("../../img/contacts.jpg");
   background-size: cover;
-  &__title{
+  height: 100vh;
+  &__title {
     color: #fff;
+    margin-bottom: 135px;
   }
-  &-inner{
+  &-inner {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+
+  }
+  &-inner__follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &-inner__request {
+    text-align: center;
+  }
+  &__request-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.06em;
+
+    color: #ffffff;
+    margin-bottom: 35px;
+  }
+  &__request-btn {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 55px;
+  }
+  &__request-subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+  &__request-descr {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+    color: #ffffff;
   }
 }
