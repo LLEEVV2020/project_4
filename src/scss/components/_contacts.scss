@@ -1,32 +1,110 @@
 .contacts {
   background-repeat: no-repeat;
-  background: linear-gradient(
-      180deg,
+  background: linear-gradient(180deg,
       rgba(0, 0, 0, 0.2) 61.13%,
-      rgba(0, 0, 0, 0) 100%
-    ),
+      rgba(0, 0, 0, 0) 100%),
     url("../../img/contacts.jpg");
   background-size: cover;
   height: 100vh;
+
   &__title {
     color: #fff;
     margin-bottom: 135px;
   }
+
   &-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
   }
+
   &-inner__follow {
+
+    text-align: center;
+  }
+
+  &__follow-title {
+    font-family: 'Bodoni 72';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 27px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+  }
+
+  &__social-list {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 45px;
   }
+
+  .contacts__social-item + &__social-item {
+    margin-left: 20px;
+  }
+  &__numbers{
+    position: relative;
+  }
+   &__numbers::after{
+     content: "";
+     position: absolute;
+     background-image: url("../../img/Mask\ group-left.png");
+     top: -10px;
+     right: 0;
+     left: 0;
+     bottom: 0;
+     height: 310px;
+     width: 360px;
+     
+   }
+  &__number-title {
+    font-family: 'Bodoni 72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    margin-bottom: 35px;
+  }
+
+  &__number-link--one {
+    margin-bottom: 15px;
+  }
+
+  &__number-link {
+    font-family: 'Bodoni 72';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 27px;
+    color: #FFFFFF;
+  }
+
+   &-follow__list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+   &__list-item + .contacts__list-item{
+    margin-left: 37px;
+   }
+   &-follow__list li{
+    font-family: 'Bodoni 72';
+font-style: normal;
+font-weight: 700;
+font-size: 23px;
+line-height: 27px;
+
+color: #FFFFFF;
+   }
   &-inner__request {
     text-align: center;
   }
+
   &__request-title {
     font-style: normal;
     font-weight: 400;
@@ -37,11 +115,13 @@
     color: #ffffff;
     margin-bottom: 35px;
   }
+
   &__request-btn {
     background-color: transparent;
     border: none;
     margin-bottom: 55px;
   }
+
   &__request-subtitle {
     font-style: normal;
     font-weight: 400;
@@ -51,6 +131,7 @@
     color: #ffffff;
     margin-bottom: 5px;
   }
+
   &__request-descr {
     font-style: normal;
     font-weight: 400;
