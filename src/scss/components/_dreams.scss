@@ -1,0 +1,19 @@
+.dreams{
+  background-image: url("../../img/dreams-cat.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+  &-inner{
+    padding-top: 120px;
+    max-width: 900px;
+    margin: 0 auto;
+  height: 95vh;
+  text-align: center;
+  }
+&__title{
+  margin-bottom: 50px;
+}
+&__btn{
+// margin-bottom: -50px;
+}
+}
