@@ -1,0 +1,14 @@
+.process{
+&__title{
+  padding-top: 8px;
+  border: 1px solid #000;
+  border-bottom: none;
+}
+&-items{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-template-rows: repeat(2,1fr);
+
+}
+
+}
