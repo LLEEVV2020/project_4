@@ -1,0 +1,13 @@
+.contacts{
+  background-image: url("../../img/contacts.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__title{
+    color: #fff;
+  }
+  &-inner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
