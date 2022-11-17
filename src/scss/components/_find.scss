@@ -1,0 +1,29 @@
+.find{
+  &__title{
+    margin-bottom: 90px;
+  }
+  &-wrapper{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 55px;
+  }
+
+  &__item-text{
+    font-family: 'Bodoni 72';
+font-style: italic;
+font-weight: 400;
+letter-spacing: 0.03em;
+color: #000000;
+font-size: 19px;
+line-height: 23px;
+
+  }
+  &__item-span{
+    font-family: 'Bodoni 72';
+
+    text-transform: uppercase;
+    font-size: 70px;
+    line-height: 70px;
+  }
+}

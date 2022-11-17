@@ -13,11 +13,11 @@
 
   &-items__item {
     text-align: center;
-   margin: 0 auto;
-   position: relative;
+    margin: 0 auto;
+    position: relative;
   }
 
-  &-items__item::after{
+  &-items__item::after {
     content: "";
     position: absolute;
     background-image: url("../../img/arrow-process.png");
@@ -26,20 +26,19 @@
     top: 50px;
     right: -150px;
   }
-  &-items__item:nth-last-child(1)::after{
-    background-image: none;
-  }
-  &-items__item:nth-last-child(4)::after{
+
+  &-items__item:nth-last-child(1)::after {
     background-image: none;
   }
 
+  &-items__item:nth-last-child(4)::after {
+    background-image: none;
+  }
 
   &__item-img {
     margin-bottom: 35px;
 
   }
-
-
 
   &__item-subtitle {
     margin-bottom: 20px;
