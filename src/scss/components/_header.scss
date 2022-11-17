@@ -1,45 +1,5 @@
 .header {
   background-color: rgba(216, 220, 223, 0.8);
-  &-top__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-  }
-
-  &-menu__list {
-    margin: 0 auto;
-    display: flex;
-  }
-
-  &__list-item+.header__list-item {
-    margin-left: 80px;
-  }
-
-  &__list-link {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 26px;
-    letter-spacing: 0.06em;
-    padding-bottom: 6px;
-    color: #000000;
-    transition: all 0.5s;
-  }
-
-  &__list-link:hover {
-    border-bottom: 1px solid #333333;
-
-  }
-
-  &__social-list {
-    display: flex;
-    cursor: pointer;
-  }
-
-  &__social-item+.header__social-item {
-    margin-left: 20px;
-  }
 
   &-content{
 height: 80vh;
