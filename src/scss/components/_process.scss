@@ -1,14 +1,70 @@
-.process{
-&__title{
-  padding-top: 8px;
-  border: 1px solid #000;
-  border-bottom: none;
-}
-&-items{
-display: grid;
-grid-template-columns: repeat(3,1fr);
-grid-template-rows: repeat(2,1fr);
+.process {
+  &__title {
+    padding-top: 8px;
+    border: 1px solid #000;
+    border-bottom: none;
+  }
 
-}
+  &-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 
+  &-items__item {
+    text-align: center;
+   margin: 0 auto;
+   position: relative;
+  }
+
+  &-items__item::after{
+    content: "";
+    position: absolute;
+    background-image: url("../../img/arrow-process.png");
+    height: 77px;
+    width: 186px;
+    top: 50px;
+    right: -150px;
+  }
+  &-items__item:nth-last-child(1)::after{
+    background-image: none;
+  }
+  &-items__item:nth-last-child(4)::after{
+    background-image: none;
+  }
+
+
+  &__item-img {
+    margin-bottom: 35px;
+
+  }
+
+
+
+  &__item-subtitle {
+    margin-bottom: 20px;
+    font-family: "Bodoni 72";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+    color: #000000;
+  }
+
+  &__item-caption {
+    font-family: 'Bodoni 72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #000000;
+    max-width: 320px;
+    margin-bottom: 60px;
+  }
+
+  &__item-caption--span {
+    font-weight: bold;
+  }
 }
