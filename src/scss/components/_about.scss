@@ -62,6 +62,12 @@
     background-image: url(../img/about-line.webp);
     width: 696px;
     height: 475px;
+    @media (max-width: 1200px) {
+      width: 590px;
+      height: 414px;
+      transform: translateX(-50%) translateY(-32%);
+      background-size: cover;
+    }
   }
 }
 
