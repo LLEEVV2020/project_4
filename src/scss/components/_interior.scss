@@ -1,0 +1,17 @@
+.interior {
+  &__title {
+    margin-bottom: 55px;
+  }
+
+  &__title-span {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  &__items{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 30px;
+
+  }
+}

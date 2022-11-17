@@ -18,11 +18,15 @@ color: #000000;
 }
 
 .header{
+ &-top{
+  border: 1px solid #333333;
+ }
   &-top__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+
   }
 
   &-menu__list {
