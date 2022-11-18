@@ -3,10 +3,10 @@
 
 
 const swiper = new Swiper('.swiper-slide',{
-  autoplay: {
+  /*autoplay: {
     delay: 2500,
     disableOnInteraction: false,
-  },
+  },*/
 
 });
 
