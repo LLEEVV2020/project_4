@@ -3,7 +3,7 @@
 }
 
 .header-content{
-  min-height: 737px;
+  min-height: 837px;
   position: relative;
 }
 .slider-container{
@@ -14,7 +14,8 @@
   width: 100%;
 
   .swiper-slide  img{
-    height: 737px;
+    height: 837px;
     width: 100%;
+    object-position: bottom;
   }
 }
