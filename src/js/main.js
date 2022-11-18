@@ -2,8 +2,8 @@
 
 
 
-const swiper = new Swiper('.swiper-slide',{
-  /*autoplay: {
+const swiper = new Swiper('.slider-container',{
+ /* autoplay: {
     delay: 2500,
     disableOnInteraction: false,
   },*/

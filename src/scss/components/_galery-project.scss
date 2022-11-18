@@ -4,4 +4,17 @@
 
 .header-content{
   min-height: 737px;
+  position: relative;
+}
+.slider-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  .swiper-slide  img{
+    height: 737px;
+    width: 100%;
+  }
 }
