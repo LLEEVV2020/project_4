@@ -19,3 +19,13 @@
     object-position: bottom;
   }
 }
+
+.slider-navigation{
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 1;
+}

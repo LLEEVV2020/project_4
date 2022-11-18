@@ -8,7 +8,10 @@ const swiper = new Swiper('.slider-container',{
     disableOnInteraction: false,
   },*/
 
+  navigation: {
+    nextEl: ".swiperbn1",
+    prevEl: ".swiperbn2",
+  },
 });
-
 
 
