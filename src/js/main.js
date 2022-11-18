@@ -2,8 +2,13 @@
 
 
 
-const swiper = new Swiper('.header-swiper',{
-  direction: 'vertical',
-  loop: true,
+const swiper = new Swiper('.swiper-slide',{
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
 
 });
+
+
+
