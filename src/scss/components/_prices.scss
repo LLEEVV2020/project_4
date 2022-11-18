@@ -1,0 +1,41 @@
+.prices {
+  background-image: url("../../img/prices-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+
+  &__title {
+    padding-top: 120px;
+    margin-bottom: 32px;
+  }
+
+  &-inner {
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 90px 190px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  &__description {
+    font-family: 'Bodoni 72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #000000;
+    max-width: 500px;
+  }
+
+  &__description-span {
+    font-weight: 700;
+  }
+}
