@@ -3,7 +3,7 @@ const swiper = new Swiper('.slider-container',{
     delay: 2500,
     disableOnInteraction: false,
   },
-
+  speed: 1000,
   pagination: {
     el: ".swiper-p1",
   },
