@@ -21,6 +21,9 @@ color: #000000;
  &-top{
   border: 1px solid #333333;
  }
+ &__menu-btn{
+  display: none;
+ }
   &-top__inner {
     display: flex;
     justify-content: space-between;
@@ -174,4 +177,49 @@ color: #000000;
   }
 
 }
+}
+
+
+@media (max-width:400px) {
+.header{
+
+  &-menu__list{
+ transform: translateY(-200%);
+    padding: 90px 0 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    // background-color: #000;
+    display: block;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  &__list-item-item +.header__list-item{
+    margin-left: 0;
+  }
+  &__list-link{
+    display: block;
+    padding: 15px 0;
+    color: #fff;
+  }
+  &__menu-btn{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-top: 38px;
+    position: relative;
+    z-index: 2;
+    display: block;
+
+  }
+  &__list--active{
+    transform: translateY(0%);
+  }
+}
+
+
+/* button one */
+
+
 }

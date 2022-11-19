@@ -15,4 +15,7 @@ const swiper = new Swiper('.slider-container',{
 });
 
 
+// burger-menu
+const btn = document.querySelector('.header__menu-btn');
+
 new WOW().init();
