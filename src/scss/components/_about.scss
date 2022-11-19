@@ -52,7 +52,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  gap: 32px;
+  gap: 20px;
   &::before{
     content: "";
     position: absolute;
@@ -73,7 +73,7 @@
 
 
 .about__block-img{
-  max-width: 785px;
+  max-width: 791px;
   width: 100%;
   position: relative;
   &::after{
