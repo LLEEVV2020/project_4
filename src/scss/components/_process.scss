@@ -30,7 +30,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-
     column-gap: 80px;
     row-gap: 57px;
     padding-bottom: 27px;
@@ -69,7 +68,6 @@
 
   &__item-img {
     margin-bottom: 31px;
-
   }
 
   &__item-subtitle {
@@ -83,7 +81,6 @@
   }
 
   &__item-caption {
-    //font-family: 'Bodoni 72';
     font-style: normal;
     font-weight: 400;
     font-size: 19px;
@@ -91,11 +88,21 @@
     text-align: center;
     letter-spacing: 0.03em;
     color: #000000;
-    //max-width: 320px;
-    //margin-bottom: 33px;
+    max-width: 290px;
   }
 
   &__item-caption--span {
     font-weight: bold;
+  }
+}
+
+
+
+@media(max-width:768px){
+  .process{
+    &-items{
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }
