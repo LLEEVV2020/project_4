@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="294c855b-e6d9-4b1c-8a4f-b4d82b0b66df" name="Changes" comment="" />
+    <list default="true" id="294c855b-e6d9-4b1c-8a4f-b4d82b0b66df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/scss/mixins/_breakpoint.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/mixins/_breakpoint.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +25,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.selected.package.stylelint": "C:\\Users\\User\\Desktop\\project_4\\node_modules\\stylelint",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -35,8 +40,12 @@
       <option name="presentableId" value="Default" />
       <updated>1668856560335</updated>
       <workItem from="1668856563025" duration="11000" />
+      <workItem from="1668858166028" duration="234000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
