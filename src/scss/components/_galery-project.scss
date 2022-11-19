@@ -27,6 +27,24 @@
   }
 }
 
+.header-container{
+  position: relative;
+  z-index: 1;
+  min-height: 837px;
+
+
+}
+.header-container,
+.header-content-inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header__img{
+  margin-left: auto;
+}
+
 .slider-navigation{
   position: absolute;
   top: 0%;
@@ -57,13 +75,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 75px;
+  margin-right: auto;
+  transform: translateX(-17px);
+}
+.header-content-inner{
+  margin-bottom: 114px;
+  min-width: 898px;
 }
 
-  .header-container{
-    position: relative;
-    z-index: 1;
-    height: 100%;
-  }
 
 
 
