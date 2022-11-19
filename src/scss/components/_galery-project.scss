@@ -41,4 +41,17 @@
     width: 135px;
     height: 136px;
   }
+  &::after{
+    display: none;
+  }
+}
+.swiper-button-prev{
+  img{
+    transform: translate(-57%, -88%);
+  }
+}
+.swiper-button-next{
+  img{
+    transform: translate(-45%, -88%);
+  }
 }
