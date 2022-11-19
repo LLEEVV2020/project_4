@@ -15,3 +15,4 @@ const swiper = new Swiper('.slider-container',{
 });
 
 
+new WOW().init();
