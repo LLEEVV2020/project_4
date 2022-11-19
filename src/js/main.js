@@ -6,6 +6,7 @@ const swiper = new Swiper('.slider-container',{
   speed: 1000,
   pagination: {
     el: ".swiper-p1",
+    clickable: true
   },
   navigation: {
     nextEl: ".swiperbn1",
@@ -14,3 +15,4 @@ const swiper = new Swiper('.slider-container',{
 });
 
 
+new WOW().init();

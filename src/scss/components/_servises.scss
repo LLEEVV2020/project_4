@@ -2,7 +2,7 @@
   margin-bottom: 73px;
 }
 .servises{
-  margin-bottom: 120px;
+  margin-bottom: 114px;
 }
 .servises__wrapper{
   display: flex;
@@ -40,8 +40,8 @@
   font-size: 32px;
   line-height: 38px;
   text-align: center;
-  margin-bottom: 62px;
-
+  margin-bottom: 70px;
+  letter-spacing: 0.06em;
   position: relative;
 
     &::before{
@@ -50,7 +50,7 @@
       height: 1px;
       background-color: #000000;
       position: absolute;
-      bottom: -5px;
+      bottom: -7px;
       left: 0;
       width: 0%;
       transition: width .3s ease-in-out;

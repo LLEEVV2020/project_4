@@ -48,10 +48,23 @@ color: #000000;
     padding-bottom: 6px;
     color: #000000;
     transition: all 0.5s;
+    position: relative;
+    &::before{
+      content: "";
+      background-color: #000;
+      width: 0%;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(1.25);
+      transition: width 0.3s ease-in-out;
+    }
   }
 
-  &__list-link:hover {
-    border-bottom: 1px solid #333333;
+  &__list-link:hover::before {
+
+    width: 100%;
 
   }
 
