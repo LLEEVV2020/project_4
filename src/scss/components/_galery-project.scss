@@ -18,6 +18,13 @@
     width: 100%;
     object-position: bottom;
   }
+
+  .swiper-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate3d(0,0,0) translateY(-68px);
+  }
 }
 
 .slider-navigation{
@@ -29,6 +36,23 @@
   transform: translateX(-50%);
   z-index: 1;
 }
+
+.swiper-pagination{
+  .swiper-pagination-bullet {
+    width: 36px;
+    height: 30px;
+    background-image: url("../../img/swiper-pagination-icon.png");
+    background-size: cover;
+    background-color: transparent;
+    opacity: 1;
+    margin: 0 4px !important;
+  }
+  .swiper-pagination-bullet-active{
+    width: 62px;
+    height: 52px;
+  }
+}
+
 
 .swiper-button-next,
 .swiper-button-prev{

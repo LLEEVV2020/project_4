@@ -4,6 +4,9 @@ const swiper = new Swiper('.slider-container',{
     disableOnInteraction: false,
   },*/
 
+  pagination: {
+    el: ".swiper-p1",
+  },
   navigation: {
     nextEl: ".swiperbn1",
     prevEl: ".swiperbn2",
