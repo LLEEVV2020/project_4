@@ -39,6 +39,7 @@ color: #000000;
   }
 
   &__list-link {
+    font-family: 'Bodoni 72';
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
@@ -139,4 +140,25 @@ color: #000000;
     color: #ffffff;
     text-align: center;
   }
+}
+
+
+@media(max-width:760px){
+.header{
+  .logo{
+      width: 160px;
+      height: 48px;
+  }
+  &__list-item+.header__list-item {
+    margin-left: 24px;
+  }
+  &__social-item+.header__social-item {
+    margin-left: 9px;
+  }
+  &__list-link {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+}
 }
