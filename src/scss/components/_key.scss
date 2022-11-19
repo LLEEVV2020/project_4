@@ -1,1 +1,61 @@
-
+.key {
+  &-border{
+    border: 1px solid #000000;
+  border-bottom: none;
+  }
+  &__title{
+    padding-top: 13px;
+    border-bottom: 1px solid #000;
+  }
+  &__description{
+    text-align: center;
+    font-family: 'Bodoni 72';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    padding: 35px 0;
+    color: #000000;
+  }
+  &__description-span{
+    font-family: 'Bodoni 72';
+font-style: italic;
+font-weight: 400;
+font-size: 32px;
+line-height: 35px;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+color: #000000;
+  }
+  &-wrapper {
+    background-image: url("../../img/key.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    margin-bottom: 50px;
+  padding-top: 200px;
+  }
+  &__info {
+    padding: 50px 85px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2.5px);
+    // text-align: center;
+    margin: 0 auto;
+    max-width: 830px;
+  }
+  &__info-caption {
+    font-family: "Bodoni 72";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #000000;
+    max-width: 660px;
+  }
+  &__img-two{
+   padding-bottom: 50px;
+    border-bottom: 1px solid #000;
+  }
+}

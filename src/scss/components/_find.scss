@@ -9,6 +9,7 @@ align-items: center;
 justify-content: center;
 gap: 55px;
 position: relative;
+margin-bottom: 120px;
 
 &::after{
   content: "";
@@ -39,4 +40,14 @@ line-height: 23px;
     font-size: 70px;
     line-height: 70px;
   }
+&__item-text:nth-child(1){
+  margin-bottom: 73px;
+}
+&__item-text:nth-child(2){
+  margin-bottom: 80px;
+  padding-top: 60px;
+}
+&__item-text:nth-child(3){
+  padding-top: 60px;
+}
 }
