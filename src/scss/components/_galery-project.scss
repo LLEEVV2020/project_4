@@ -53,6 +53,20 @@
   }
 }
 
+.header__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .header-container{
+    position: relative;
+    z-index: 1;
+    height: 100%;
+  }
+
+
+
 
 .swiper-button-next,
 .swiper-button-prev{
@@ -71,11 +85,11 @@
 }
 .swiper-button-prev{
   img{
-    transform: translate(-57%, -88%);
+    transform: translate(-38%, -88%);
   }
 }
 .swiper-button-next{
   img{
-    transform: translate(-45%, -88%);
+    transform: translate(-61%, -88%);
   }
 }
