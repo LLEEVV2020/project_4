@@ -49,7 +49,9 @@
   background-position: center center;
   height: 150vh;
 
-
+&-container{
+  padding: 0;
+}
   &__title{
     margin-bottom: 16px;
   }
@@ -66,7 +68,5 @@
     margin-bottom: 25px;
   }
 }
-.container{
-  padding: 0;
-}
+
 }
