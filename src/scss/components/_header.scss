@@ -1,13 +1,6 @@
 .header {
   background-color: rgba(216, 220, 223, 1);
 
-  &-content{
-
-    background-image: url("../../img/header-bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
 }
 
 .header-top{
@@ -44,7 +37,7 @@
     width: 100%;
     height: 100%;
     background-color: none;
-    z-index: 3;
+    z-index: 1;
     background-color: rgba(216, 220, 223,1);
     opacity: 0;
     animation-name: heartBeat3;
@@ -56,11 +49,15 @@
   0% {
 
       opacity: 1;
+      z-index: 3;
   }
   10% {
 
-    opacity: 1;
-}
+      opacity: 1;
+  }
+  99%{
+    z-index: 3;
+  }
 }
 @keyframes heartBeat2 {
   0% {
