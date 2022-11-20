@@ -39,3 +39,34 @@
     font-weight: 700;
   }
 }
+
+
+@media(max-width:768px){
+  .prices{
+    background-image: url("../../img/mobile/prices-bg-ipad.jpg");
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 150vh;
+
+
+  &__title{
+    margin-bottom: 16px;
+  }
+  &-inner{
+    display: block;
+    width: 100%;
+    padding-top: 45px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+    text-align: center;
+
+  }
+  &__description {
+    margin-bottom: 25px;
+  }
+}
+.container{
+  padding: 0;
+}
+}
