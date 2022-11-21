@@ -6,7 +6,7 @@
     &::after{
       content: "";
       position: absolute;
-      background-image: url("../../img/about-line.png");
+      background-image: url("../img/about-line.png");
       height: 400px;
       width: 690px;
       top: 15px;
@@ -62,7 +62,7 @@ line-height: 23px;
     margin-bottom: 75px;
     &::after{
       position: absolute;
-      background-image: url("../../img/mobile/about-line.png");
+      background-image: url("../img/mobile/about-line.png");
       height: 470px;
       width: 420px;
       top: 15px;

@@ -1,5 +1,5 @@
 .prices {
-  background-image: url("../../img/prices-bg.jpg");
+  background-image: url("../img/prices-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -43,7 +43,7 @@
 
 @media(max-width:768px){
   .prices{
-    background-image: url("../../img/mobile/prices-bg-ipad.jpg");
+    background-image: url("../img/mobile/prices-bg-ipad.jpg");
     background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
