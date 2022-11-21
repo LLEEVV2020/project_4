@@ -1,8 +1,9 @@
 .modal {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
-  // position: fixed;
-
+  padding: 80px 0;
+  margin: 0 auto;
+  display: none;
 
   &__container {
     margin: 0 auto;
@@ -63,4 +64,9 @@
     top: 32px;
     right: 34px;
   }
+}
+
+
+.modal--active{
+  display: block;
 }

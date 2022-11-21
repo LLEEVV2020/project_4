@@ -17,18 +17,19 @@ const swiper = new Swiper(".slider-container", {
 // modal window
 const overlayModal = document.querySelector(".modal");
 const closeBtn = document.querySelector(".modal__close");
-const openBtn = document.querySelectorAll('.');
+const openBtn = document.querySelectorAll(".add");
 
 //закрытие модалки
-overlayModal.addEventListener("click", ({ target }) => {
-  if (target === overlayModal || target.closest(".modal__close")) {
-    overlayElem.remove();
-  }
-});
 
 for (let i = 0; i < openBtn.length; i++) {
   openBtn[i].addEventListener("click", () => {
-     overlayModal.classList.toggle('modal--active');
+    overlayModal.classList.add("modal--active");
+  });
+
+  overlayModal.addEventListener("click", ({ target }) => {
+    if (target === overlayModal || target === closeBtn) {
+      overlayModal.classList.remove("modal--active");
+    }
   });
 }
 
