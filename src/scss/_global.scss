@@ -1,4 +1,9 @@
-
+.modal__open-btn{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
 .container{
   padding: 0 25px ;
   max-width: 1500px;
