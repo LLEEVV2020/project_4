@@ -14,47 +14,23 @@ const swiper = new Swiper(".slider-container", {
   },
 });
 
-
-
-// disabled scroll with open modal window
-
-
-const disablesScroll=()=>{
-  document.body.scrollPosition = window.scrollY
-  document.body.style.cssText=`
-  overlow:hidden;
-  position:fixed;
-  top:-${ document.body.scrollPosition}px;
-   left:0;
-   height:100vh;
-   width:100vh;
-  `
-}
-const enabledScroll=()=>{
-  window.scroll({top: document.body.scrollPosition})
-  document.body.style.cssText='';
-}
 // modal window
 const overlayModal = document.querySelector(".modal");
 const closeBtn = document.querySelector(".modal__close");
 const openBtn = document.querySelectorAll(".modal__open-btn");
 
-//закрытие модалки
-overlayModal.addEventListener("click", ({ target }) => {
-  if (target === overlayModal || target === closeBtn) {
-   overlayModal.remove()
-   enabledScroll()
-  }
+// блокирует scroll при открытие modal
+
+openBtn.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    // Для каждой вешаем обработчик событий на клик
+    e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+    overlayModal.classList.add("modal--active");
+  });
 });
 
-
-for (let i = 0; i < openBtn.length; i++) {
-  openBtn[i].addEventListener("click", () => {
-    overlayModal.classList.toggle("modal--active");
-    disablesScroll()
-  });
-}
-
-// открытие модалки по кнопки
-
-//new WOW().init();
+overlayModal.addEventListener("click", ({ target }) => {
+  if (target === overlayModal || target === closeBtn) {
+    overlayModal.remove();
+  }
+});
