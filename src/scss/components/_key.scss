@@ -6,6 +6,11 @@
   &__title{
     padding-top: 13px;
     border-bottom: 1px solid #000;
+    @media (max-width: (868px)) {
+      padding-top: 15px;
+      padding-bottom: 11px;
+    }
+
   }
   &__description{
     text-align: center;
@@ -16,6 +21,13 @@
     line-height: 36px;
     padding: 35px 0;
     color: #000000;
+    @media (max-width: (868px)) {
+      padding: 33px 0 45px;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.15;
+
+    }
   }
   &__description-span{
     font-family: 'Bodoni 72';
@@ -33,8 +45,24 @@ color: #000000;
     background-size: cover;
     height: 90vh;
     margin-bottom: 50px;
-  padding-top: 200px;
+    padding-top: 200px;
+    @media (max-width: (868px)) {
+      margin-right: -26px;
+      margin-left: -26px;
+      padding-top: 120px;
+      height: 582px;
+      margin-bottom: 45px;
+      background-position: center;
+    }
   }
+
+  .wr-key__img-two{
+    @media (max-width: (868px)) {
+      margin: 0 -26px;
+    }
+
+  }
+
   &__info {
     padding: 50px 85px;
     background: rgba(255, 255, 255, 0.75);
@@ -42,6 +70,13 @@ color: #000000;
     // text-align: center;
     margin: 0 auto;
     max-width: 830px;
+    @media (max-width: (868px)) {
+      max-width: 602px;
+      padding: 38px 40px 25px;
+      p{
+        line-height: 1.225;
+      }
+    }
   }
   &__info-caption {
     font-family: "Bodoni 72";
@@ -57,5 +92,13 @@ color: #000000;
   &__img-two{
    padding-bottom: 50px;
     border-bottom: 1px solid #000;
+    @media (max-width: (868px)) {
+      display: block;
+      padding-bottom: 0;
+    }
+  }
+
+  @media (max-width: (868px)) {
+    padding-bottom: 45px;
   }
 }
