@@ -7,11 +7,54 @@
     font-size: 20px;
     font-weight: 400;
   }
-  &__items{
+
+  &__items {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 30px;
 
   }
+
+  &__link {
+    display: none;
+  }
+}
+
+
+
+
+@media(max-width:769px) {
+  .interior {
+    padding-bottom: 50px;
+    border-bottom: 2px solid #000;
+
+    &__title {
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    &__title-span {
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    &__items {
+      display: block;
+
+
+    }
+
+    &__items-item {
+      margin-bottom: 45px;
+    }
+
+    &__link {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+  }
+
 }
