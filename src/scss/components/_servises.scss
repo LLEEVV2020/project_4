@@ -1,7 +1,9 @@
 .servises__title {
   margin-bottom: 73px;
 }
-
+.servises__galery-title{
+  padding-top: 120px;
+}
 .servises {
   margin-bottom: 114px;
 }
@@ -9,6 +11,11 @@
 .servises__wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.servises__wrapper-galery {
+ padding-bottom: 120px;
+ border-bottom: 1px solid #000;
 }
 
 

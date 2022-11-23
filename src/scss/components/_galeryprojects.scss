@@ -1,0 +1,23 @@
+.g-project{
+  &-items{
+    margin-bottom: 120px;
+   gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-gorizont{
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+  }
+  &__descr{
+    font-style: normal;
+font-weight: 400;
+font-size: 19px;
+line-height: 23px;
+letter-spacing: 0.03em;
+    padding: 30px 35px;
+    border: 1px solid #000;
+    margin-bottom: 75px;
+  }
+}
