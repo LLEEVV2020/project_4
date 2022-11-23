@@ -86,6 +86,11 @@ color: #000000;
   }
 
 }
+
+.header__list-item{
+  text-align: center;
+}
+
 .footer {
   background: linear-gradient(
     273.19deg,
@@ -94,6 +99,10 @@ color: #000000;
   );
 
   min-height: 384px;
+  @media (max-width: (850px)) {
+    min-height: inherit;
+    padding-bottom: 32px;
+  }
 
   .container{
     max-width: 1302px;
@@ -102,36 +111,141 @@ color: #000000;
   .footer-top{
     .container{
       padding: 91px 33px 6px;
+      @media (max-width: (1200px)) {
+        max-width: 780px;
+        padding-top: 88px;
+      }
+      @media (max-width: (850px)) {
+        max-width: 706px;
+      }
+      @media (max-width: (650px)) {
+        padding-top: 75px;
+        max-width: 500px;
+      }
+      @media (max-width: (530px)) {
+        max-width: 440px;
+        position: relative;
+      }
+      @media (max-width: (460px)) {
+        max-width: 345px;
+      }
+      @media (max-width: (350px)) {
+        max-width: 280px;
+      }
+
     }
   }
+  .footer-social{
+    @media (max-width: (1200px)) {
+      order: 1;
+    }
+    @media (max-width: (530px)) {
+      position: absolute;
+      right: 50px;
+      bottom: 30px;
+    }
+  }
+
   .footer-partners{
     transform: translateY(-19px);
+    @media (max-width: (1200px)) {
+      transform: none;
+      display: flex;
+      align-items: center;
+    }
+    @media (max-width: (530px)) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &-top__inner {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    @media (max-width: (1200px)) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @media (max-width: (850px)) {
+      max-width: 556px;
+    }
+
   }
 
   &__logo {
     margin-bottom: 37px;
     display: block;
-    padding: 0 43px;
+
+    @media (max-width: (1200px)) {
+      padding: 0;
+    }
+    @media (max-width: (530px)) {
+      margin-bottom: 35px;
+      width: 131px;
+      height: 27px;
+    }
   }
 
   &-menu__list,
   &__social-list {
     display: flex;
+    @media (max-width: (1200px)) {
+      width: 100%;
+      justify-content: center;
+    }
+    @media (max-width: (530px)) {
+      flex-direction: column;
+    }
   }
+  &-menu__list{
+    @media (max-width: (1200px)) {
+      margin-bottom: 30px;
+      justify-content: space-between;
+    }
+    @media (max-width: (850px)) {
+      //max-width: 550px;
+    }
+    @media (max-width: (650px)) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .footer__list-item{
+        width: 33.33%;
+      }
+    }
+    @media (max-width: (530px)) {
+      flex-direction: column;
+      .footer__list-item{
+        width: 100%;
+      }
+    }
+  }
+
 
   .footer__list-item + &__list-item {
     margin-left: 77px;
+    @media (max-width: (1200px)) {
+      margin-left: 0;
+    }
+    @media (max-width: (530px)) {
+      margin-top: 7px;
+    }
   }
 
   .footer__social-item + &__social-item {
     margin-left: 20px;
+    @media (max-width: (530px)) {
+      margin-left: 0;
+    }
   }
+
+  @media (max-width: (530px)) {
+    .footer__social-item{
+      margin-bottom: 15px;
+    }
+  }
+
 
   &__list-link {
     font-style: normal;
@@ -152,6 +266,13 @@ color: #000000;
     text-align: center;
     letter-spacing: 0.06em;
     color: #ffffff;
+    @media (max-width: (1200px)) {
+      margin-bottom: 0;
+      padding-right: 30px;
+    }
+    @media (max-width: (530px)) {
+      font-size: 15px;
+    }
   }
 
   &-partners__link {
@@ -164,10 +285,23 @@ color: #000000;
     letter-spacing: 0.03em;
     text-decoration-line: underline;
     color: #ffffff;
+    @media (max-width: (530px)) {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
   }
   &-bottom{
     margin-bottom: 40px;
     padding-top: 86px;
+    @media (max-width: (1200px)) {
+      padding-top: 63px;
+    }
+    @media (max-width: (850px)) {
+      padding-top: 50px;
+      margin-bottom: 0;
+    }
   }
   &__bottom-subtitle {
     font-style: normal;
