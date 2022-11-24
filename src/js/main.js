@@ -29,8 +29,11 @@ openBtn.forEach((button) => {
   });
 });
 
-overlayModal.addEventListener("click", ({ target }) => {
-  if (target === overlayModal || target === closeBtn) {
-    overlayModal.remove();
-  }
-});
+if(overlayModal !== null){
+  overlayModal.addEventListener("click", ({ target }) => {
+    if (target === overlayModal || target === closeBtn) {
+      overlayModal.remove();
+    }
+  });
+}
+
