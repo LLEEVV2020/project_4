@@ -35,27 +35,6 @@ let swiper3 = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
-// const swiper2 = new Swiper(".slider-container2", {
-//   slidesPerView: 2,
-//   grid: {
-//     rows: 2,
-//   },
-
-//   autoplay: {
-//     delay: 3500,
-//     disableOnInteraction: false,
-//   },
-//   // speed: 3100,
-//   pagination: {
-//     el: ".swiper-p1",
-//     clickable: true,
-//   },
-//   navigation: {
-//     nextEl: ".swiperbn1",
-//     prevEl: ".swiperbn2",
-//   },
-// });
-
 
 
 
@@ -82,3 +61,36 @@ if(overlayModal !== null){
   });
 }
 
+
+
+/*
+Скрипт
+const filterBox = document.querySelectorAll('.box');
+
+document.querySelector('.nav-block').addEventListener(
+    'click', event => {
+
+
+        if(event.target.tagName !== 'LI') return false;
+
+        let filterClass = event.target.dataset['f'];
+
+
+        console.log(filterClass);
+        filterBox.forEach( elem => {
+
+            let backgroundImage = elem.dataset['background_image'];
+            console.log(backgroundImage);
+
+            elem.style.backgroundImage = backgroundImage;
+
+            elem.classList.remove('hide');
+            if(!elem.classList.contains(filterClass) && filterClass !== 'all'){
+                elem.classList.add('hide');
+            }
+
+        });
+
+
+});
+*/
