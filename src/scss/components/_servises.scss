@@ -152,7 +152,6 @@
 
 @media(max-width:769px) {
   .servises {
-    margin-bottom: 150px;
     &-container {
       padding: 0;
     }
@@ -161,7 +160,7 @@
       font-size: 45px;
       line-height: 56px;
       letter-spacing: 0.12em;
-      margin-bottom: 30px;
+     // margin-bottom: 30px;
     }
   &__img{
     width: 425px;
@@ -179,7 +178,7 @@ overflow-y: hidden;
     }
 
     &__item+.servises__item {
-      margin-bottom: 35px;
+      margin-bottom: 0;
     }
   }
 }

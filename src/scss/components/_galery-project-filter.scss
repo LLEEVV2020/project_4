@@ -1,0 +1,63 @@
+.ghghhhggh{
+display: none;
+  .block-cover{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .box{
+    border-radius: 4px;
+    min-height: 140px;
+    min-width: calc(22% - 28px);
+    padding: 0 10px;
+    margin: 15px;
+    border-width: 3px;
+  }
+
+  nav ul li{
+    padding: 10px 40px 10px 0;
+    cursor: pointer;
+  }
+
+  .container{
+    max-width: 1200px;
+    margin: 50px auto;
+  }
+
+  .alizarin{
+    border: 3px solid #e74c3c;
+  }
+  .wisteria{
+    border: 3px solid #8e44ad;
+
+  }
+  .emerland{
+    border: 3px solid #2ecc71;
+
+  }
+  .sunflower{
+    border: 3px solid #2980b9;
+
+  }
+
+  .hide{
+    opacity: 1;
+    animation-name: a1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes a1{
+    to {
+        opacity: 0;
+        min-height: 0;
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+  }
+
+
+
+}
+
