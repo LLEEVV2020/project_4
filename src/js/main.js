@@ -14,29 +14,17 @@ const swiper = new Swiper(".slider-container", {
   },
 });
 
-const swiper2 = new Swiper(".slider-container2", {
 
-  slidesPerView: 2,
-  grid: {
-    rows: 2,
-  },
 
-  autoplay: {
-    delay: 3500,
-    disableOnInteraction: false,
-  },
-  speed: 3100,
-  pagination: {
-    el: ".swiper-p1",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiperbn1",
-    prevEl: ".swiperbn2",
-  },
-});
 
-var swiper3 = new Swiper(".mySwiper", {
+
+
+
+
+
+
+
+let swiper3 = new Swiper(".mySwiper", {
   slidesPerView: 3,
   grid: {
     rows: 2,
@@ -47,6 +35,26 @@ var swiper3 = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
+// const swiper2 = new Swiper(".slider-container2", {
+//   slidesPerView: 2,
+//   grid: {
+//     rows: 2,
+//   },
+
+//   autoplay: {
+//     delay: 3500,
+//     disableOnInteraction: false,
+//   },
+//   // speed: 3100,
+//   pagination: {
+//     el: ".swiper-p1",
+//     clickable: true,
+//   },
+//   navigation: {
+//     nextEl: ".swiperbn1",
+//     prevEl: ".swiperbn2",
+//   },
+// });
 
 
 
