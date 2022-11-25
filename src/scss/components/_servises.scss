@@ -91,7 +91,39 @@
 
 }
 
+@media(max-width:769px) {
+  .servises {
+    margin-bottom: 150px;
+    &-container {
+      padding: 0;
+    }
 
+    &__title {
+      font-size: 45px;
+      line-height: 56px;
+      letter-spacing: 0.12em;
+      margin-bottom: 30px;
+    }
+  &__img{
+    width: 425px;
+    height: 536px;
+  }
+    &__h3 {
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 70px;
+    }
+
+    &__wrapper {
+display: flex;
+overflow-y: hidden;
+    }
+
+    &__item+.servises__item {
+      margin-bottom: 35px;
+    }
+  }
+}
 
 @media(max-width:390px) {
   .servises {
