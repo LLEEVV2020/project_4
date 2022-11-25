@@ -3,9 +3,18 @@
 }
 .servises__galery-title{
   padding-top: 120px;
+  line-height: 1.24;
+  @media(max-width: 750px) {
+    padding-top: 0;
+    font-size: 30px;
+    margin-bottom: 33px;
+  }
 }
 .servises {
   margin-bottom: 114px;
+  @media(max-width: 750px) {
+    margin-bottom: 78px;
+  }
 }
 
 .servises__wrapper {
@@ -16,11 +25,47 @@
 .servises__wrapper-galery {
  padding-bottom: 120px;
  border-bottom: 1px solid #000;
+
+  @media(max-width: 1350px) {
+    margin: 0 -50%;
+    justify-content: center;
+    column-gap: 87px;
+  }
+
+  @media(max-width: 750px) {
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+    padding-bottom: 0;
+    border-bottom: 0 solid #000;
+    gap: 37px;
+  }
+
 }
 
 
+.servises-container{
+  @media(max-width: 500px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .servises__img {
   position: relative;
+  max-height: 536px;
+  overflow: hidden;
+
+  @media(max-width: 1350px) {
+    //max-height: 400px;
+    max-width: 425px;
+    width: 100%;
+  }
+  @media(max-width: 750px) {
+    max-height: 404px;
+    margin-bottom: 0;
+  }
+
 
   &::after {
     content: "";
@@ -40,7 +85,8 @@
     transform: translate(-50%, -50%);
     width: 224px;
     height: 120px;
-    background-image: url(../img/servis-card1decor.webp);
+
+    z-index: 1;
   }
 }
 
@@ -49,11 +95,16 @@
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
-  line-height: 38px;
   text-align: center;
   margin-bottom: 70px;
   letter-spacing: 0.06em;
   position: relative;
+  line-height: 1.2;
+
+  @media(max-width: 750px) {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
 
   &::before {
     content: "";
@@ -65,6 +116,7 @@
     left: 0;
     width: 0%;
     transition: width .3s ease-in-out;
+
   }
 
 
@@ -75,11 +127,18 @@
   width: 100%;
   min-height: 536px;
 
+  @media(max-width: 750px) {
+    min-height: inherit;
+  }
+
   &:hover {
     .servises__img {
       &::after {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0.37)), url(photo1661248207.jpg);
         filter: blur(2px);
+      }
+      &::before{
+        background-image: url(../img/servis-card1decor.webp);
       }
 
     }
