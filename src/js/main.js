@@ -64,33 +64,49 @@ if(overlayModal !== null){
 
 
 /*
-Скрипт
+Скрипт*/
 const filterBox = document.querySelectorAll('.box');
 
 document.querySelector('.nav-block').addEventListener(
     'click', event => {
 
 
-        if(event.target.tagName !== 'LI') return false;
+
+
+        if(event.target.className !== 'swiper-slide__img') return false;
 
         let filterClass = event.target.dataset['f'];
 
-
         console.log(filterClass);
+
         filterBox.forEach( elem => {
 
-            let backgroundImage = elem.dataset['background_image'];
-            console.log(backgroundImage);
+          let item_img = elem.querySelector('img');
 
-            elem.style.backgroundImage = backgroundImage;
+          if( item_img !== null){
+            item_img.parentNode.removeChild(item_img);
+          }
 
-            elem.classList.remove('hide');
-            if(!elem.classList.contains(filterClass) && filterClass !== 'all'){
-                elem.classList.add('hide');
-            }
+
+          const $img = document.createElement('img');
+          $img.src = elem.dataset['background_image'];
+
+          elem.appendChild($img);
+
+
+          let backgroundImage = elem.dataset['background_image'];
+          console.log(backgroundImage);
+
+          elem.style.backgroundImage = backgroundImage;
+
+          elem.classList.remove('hide');
+          if(!elem.classList.contains(filterClass) && filterClass !== 'all'){
+              elem.classList.add('hide');
+          }
+
 
         });
 
 
 });
-*/
+
