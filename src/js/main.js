@@ -26,29 +26,86 @@ let swiper3 = new Swiper(".mySwiper", {
   },
 });
 // modal window
-const overlayModal = document.querySelector(".modal");
-const closeBtn = document.querySelector(".modal__close");
-const openBtn = document.querySelectorAll(".modal__open-btn");
-// блокирует scroll при открытие modal
-openBtn.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    // Для каждой вешаем обработчик событий на клик
-    e.preventDefault(); // Предотвращаем дефолтное поведение браузера
-    overlayModal.classList.add("modal--active");
-  });
-});
 
-if (overlayModal !== null) {
-  overlayModal.addEventListener("click", ({ target }) => {
-    if (target === overlayModal || target === closeBtn) {
-      overlayModal.remove();
-    }
-  });
+// блокирует scroll при открытие modal
+const scrollController = {
+  scrollPosition: 0,
+  disabledScroll() {
+    scrollController.scrollPosition = window.scrollY;
+    document.body.style.cssText = `
+      overflow: hidden;
+      position: fixed;
+      top: -${scrollController.scrollPosition}px;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      padding-right: ${window.innerWidth - document.body.offsetWidth}px
+    `;
+    document.documentElement.style.scrollBehavior = 'unset';
+  },
+  enabledScroll() {
+    document.body.style.cssText = '';
+    window.scroll({top: scrollController.scrollPosition})
+    document.documentElement.style.scrollBehavior = '';
+  },
 }
+
+
+const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
+  const buttonElems = document.querySelectorAll(btnOpen);
+  const modalElem = document.querySelector(modal);
+
+  modalElem.style.cssText = `
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity ${time}ms ease-in-out;
+  `;
+
+  const closeModal = event => {
+    const target = event.target;
+
+    if (
+      target === modalElem ||
+      (btnClose && target.closest(btnClose)) ||
+      event.code === 'Escape'
+      ) {
+
+      modalElem.style.opacity = 0;
+
+      setTimeout(() => {
+        modalElem.style.visibility = 'hidden';
+        scrollController.enabledScroll();
+      }, time);
+
+      window.removeEventListener('keydown', closeModal);
+    }
+  }
+
+  const openModal = () => {
+    modalElem.style.visibility = 'visible';
+    modalElem.style.opacity = 1;
+    window.addEventListener('keydown', closeModal);
+    scrollController.disabledScroll();
+  };
+
+  buttonElems.forEach(btn => {
+    btn.addEventListener('click', openModal);
+  });
+
+  modalElem.addEventListener('click', closeModal);
+};
+
+modalController({
+  modal: '.modal',
+  btnOpen: '.modal__open-btn',
+  btnClose: '.modal__close',
+});
 /*
 Скрипт*/
 const filterBox = document.querySelectorAll(".box");
-const navBlock = document.querySelector(".nav-block");
+const navBlock = document.querySelector(".swiper-wrapper");
+console.log(navBlock);
 navBlock.addEventListener("click", (event) => {
   if (event.target.className !== "swiper-slide__img") return false;
   let filterClass = event.target.dataset["f"];
