@@ -14,16 +14,6 @@ const swiper = new Swiper(".slider-container", {
   },
 });
 
-
-
-
-
-
-
-
-
-
-
 let swiper3 = new Swiper(".mySwiper", {
   slidesPerView: 3,
   grid: {
@@ -35,16 +25,11 @@ let swiper3 = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
-
-
-
 // modal window
 const overlayModal = document.querySelector(".modal");
 const closeBtn = document.querySelector(".modal__close");
 const openBtn = document.querySelectorAll(".modal__open-btn");
-
 // блокирует scroll при открытие modal
-
 openBtn.forEach((button) => {
   button.addEventListener("click", (e) => {
     // Для каждой вешаем обработчик событий на клик
@@ -53,60 +38,44 @@ openBtn.forEach((button) => {
   });
 });
 
-if(overlayModal !== null){
+if (overlayModal !== null) {
   overlayModal.addEventListener("click", ({ target }) => {
     if (target === overlayModal || target === closeBtn) {
       overlayModal.remove();
     }
   });
 }
-
-
-
 /*
 Скрипт*/
-const filterBox = document.querySelectorAll('.box');
-
-document.querySelector('.nav-block').addEventListener(
-    'click', event => {
-
-
-
-
-        if(event.target.className !== 'swiper-slide__img') return false;
-
-        let filterClass = event.target.dataset['f'];
-
-        console.log(filterClass);
-
-        filterBox.forEach( elem => {
-
-          let item_img = elem.querySelector('img');
-
-          if( item_img !== null){
-            item_img.parentNode.removeChild(item_img);
-          }
-
-
-          const $img = document.createElement('img');
-          $img.src = elem.dataset['background_image'];
-
-          elem.appendChild($img);
-
-
-          let backgroundImage = elem.dataset['background_image'];
-          console.log(backgroundImage);
-
-          elem.style.backgroundImage = backgroundImage;
-
-          elem.classList.remove('hide');
-          if(!elem.classList.contains(filterClass) && filterClass !== 'all'){
-              elem.classList.add('hide');
-          }
-
-
-        });
-
-
+const filterBox = document.querySelectorAll(".box");
+const navBlock = document.querySelector(".nav-block");
+navBlock.addEventListener("click", (event) => {
+  if (event.target.className !== "swiper-slide__img") return false;
+  let filterClass = event.target.dataset["f"];
+  console.log(filterClass);
+  filterBox.forEach((elem) => {
+    let item_img = elem.querySelector("img");
+    if (item_img !== null) {
+      item_img.parentNode.removeChild(item_img);
+    }
+    const $img = document.createElement("img");
+    $img.src = elem.dataset["background_image"];
+    elem.appendChild($img);
+    let backgroundImage = elem.dataset["background_image"];
+    console.log(backgroundImage);
+    elem.style.backgroundImage = backgroundImage;
+    elem.classList.remove("hide");
+    if (!elem.classList.contains(filterClass) && filterClass !== "all") {
+      elem.classList.add("hide");
+    }
+  });
 });
 
+//burger
+
+const burgerBtn = document.querySelector(".header__menu-btn");
+const overtlayMenu = document.querySelector(".header-top__inner");
+
+burgerBtn.addEventListener("click", () => {
+  overtlayMenu.classList.toggle("header-top__inner--active");
+});
