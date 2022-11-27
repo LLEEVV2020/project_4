@@ -132,7 +132,7 @@ navBlock.addEventListener("click", (event) => {
 
 const burgerBtn = document.querySelector(".header__menu-btn");
 const overtlayMenu = document.querySelector(".header-top__inner");
-
-burgerBtn.addEventListener("click", () => {
+burgerBtn.addEventListener("click", ({target}) => {
   overtlayMenu.classList.toggle("header-top__inner--active");
+
 });
