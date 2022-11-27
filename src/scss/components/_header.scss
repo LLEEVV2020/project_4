@@ -5,20 +5,49 @@
 
 .header-top{
   min-height: 101px;
+  @media (max-width: (1200px)) {
+    min-height: 101px;
+    display: flex;
+    align-items: center;
+    &> .container{
+      width: 100%;
+    }
+  }
 }
 
 .logo{
   img{
     width: 182px;
     height: 63px;
+    @media (max-width: (1200px)) {
+      width: 136px;
+      height: 48px;
+    }
+  }
+  @media (max-width: (850px)) {
+    transform: translate(2px,4px);
+  }
+  @media (max-width: (760px)) {
+    transform: none;
   }
 }
 .header-top__inner{
   padding: 16px 0;
 }
+.header__social-link, .header__social-link img{
+  display: block;
+}
+
 
 .header-social{
-  margin-left: 62px;
+
+  @media (max-width: (1200px)) {
+    margin-left: 0;
+  }
+  @media (max-width: (760px)) {
+    margin: 0 auto;
+  }
+
 }
 
 
