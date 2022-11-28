@@ -27,9 +27,9 @@
  border-bottom: 1px solid #000;
 
   @media(max-width: 1350px) {
-    margin: 0 -50%;
+    //margin: 0 -50%;
     justify-content: center;
-    column-gap: 87px;
+    column-gap: 40px;
   }
 
   @media(max-width: 750px) {
@@ -60,6 +60,7 @@
     //max-height: 400px;
     max-width: 425px;
     width: 100%;
+    max-height: 464px;
   }
   @media(max-width: 750px) {
     max-height: 404px;
@@ -101,7 +102,9 @@
   position: relative;
   color: #000;
   line-height: 1.2;
-
+  @media(max-width: 1350px) {
+    font-size: 30px;
+  }
   @media(max-width: 750px) {
     font-size: 30px;
     margin-bottom: 30px;
@@ -174,8 +177,11 @@
     }
 
     &__wrapper {
-display: flex;
-overflow-y: hidden;
+      display: flex;
+      overflow-y: hidden;
+      flex-direction: column;
+      align-items: center;
+      gap: 37px;
     }
 
     &__item+.servises__item {
