@@ -68,22 +68,25 @@
     width: 100%;
     min-height: 536px;
 
+    @media(max-width: 750px) {
+      min-height: inherit;
+    }
+
     &:hover {
       .servises-galery__img {
         &::after {
-          background: linear-gradient(0deg, rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0.37)), url(photo1661248207.jpg);
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0.37)), url(../img/photo1661248207.jpg);
           filter: blur(2px);
+        }
+        &::before{
+          background-image: url(../img/servis-card1decor.webp);
         }
 
       }
 
 }
-&__wrapper-h3::before {
-  width: 100%;
-}
   }
 }
-
 
 
 @media (max-width:769px) {}

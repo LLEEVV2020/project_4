@@ -126,6 +126,20 @@
   }
 }
 
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  font-size: 19px;
+  line-height: 23px;
+  opacity: 0;
+  transition: 1s;
+  pointer-events: none;
+}
+[data-tooltip]:hover::after {
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+}
+
 @media (max-width: 390px) {
   .process {
     margin: 0 auto;
