@@ -55,12 +55,15 @@ const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
   const buttonElems = document.querySelectorAll(btnOpen);
   const modalElem = document.querySelector(modal);
 
-  modalElem.style.cssText = `
+  if(modalElem !== null ){
+    modalElem.style.cssText = `
     display: flex;
     visibility: hidden;
     opacity: 0;
     transition: opacity ${time}ms ease-in-out;
   `;
+  }
+
 
   const closeModal = event => {
     const target = event.target;
@@ -92,8 +95,9 @@ const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
   buttonElems.forEach(btn => {
     btn.addEventListener('click', openModal);
   });
-
-  modalElem.addEventListener('click', closeModal);
+  if(modalElem !== null ){
+    modalElem.addEventListener('click', closeModal);
+  }
 };
 
 modalController({
