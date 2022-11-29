@@ -103,6 +103,9 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
     }
+    &-items__item{
+      max-height: 500px;
+    }
     &-items__item:nth-child(2)::after {
       background-image: none;
     }
@@ -156,6 +159,8 @@
     }
     &-items__item {
       width: 125px;
+      max-height: 350px;
+
       margin-bottom: 25px;
     }
     &__item-img {
