@@ -50,7 +50,6 @@ const scrollController = {
   },
 }
 
-
 const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
   const buttonElems = document.querySelectorAll(btnOpen);
   const modalElem = document.querySelector(modal);
@@ -302,4 +301,19 @@ function uploadFile(file){
     };
     reader.readAsDataURL(file);
 
+}
+
+// якоря
+const anchors = document.querySelectorAll('a[href*="#"]')
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+
+    const blockID = anchor.getAttribute('href').substr(1)
+
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
 }
