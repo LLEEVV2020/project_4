@@ -15,11 +15,12 @@ const swiper = new Swiper(".slider-container", {
 });
 
 let swiper3 = new Swiper(".mySwiper", {
-  slidesPerView: 3,
+  slidesPerView: 2,
+spaceBetween: 30,
   grid: {
-    rows: 2,
+    rows: 3,
   },
-  spaceBetween: 30,
+  //spaceBetween: 0,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,

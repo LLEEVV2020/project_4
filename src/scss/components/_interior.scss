@@ -96,3 +96,26 @@
     align-items: center;
   }
 }
+
+
+.mySwiper {
+  .swiper-wrapper{
+    .swiper-slide{
+      margin-top: 0 !important;
+      margin-bottom: 30px;
+      img{
+        width: 100%;
+      }
+    }
+
+  }
+
+  .swiper-pagination{
+    position: static;
+    padding-top: 0;
+  }
+}
+
+.interior-slider{
+  position: relative;
+}
