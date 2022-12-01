@@ -41,20 +41,20 @@ const scrollController = {
       width: 100vw;
       padding-right: ${window.innerWidth - document.body.offsetWidth}px
     `;
-    document.documentElement.style.scrollBehavior = 'unset';
+    document.documentElement.style.scrollBehavior = "unset";
   },
   enabledScroll() {
-    document.body.style.cssText = '';
-    window.scroll({top: scrollController.scrollPosition})
-    document.documentElement.style.scrollBehavior = '';
+    document.body.style.cssText = "";
+    window.scroll({ top: scrollController.scrollPosition });
+    document.documentElement.style.scrollBehavior = "";
   },
-}
+};
 
-const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
+const modalController = ({ modal, btnOpen, btnClose, time = 300 }) => {
   const buttonElems = document.querySelectorAll(btnOpen);
   const modalElem = document.querySelector(modal);
 
-  if(modalElem !== null ){
+  if (modalElem !== null) {
     modalElem.style.cssText = `
     display: flex;
     visibility: hidden;
@@ -63,46 +63,44 @@ const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
   `;
   }
 
-
-  const closeModal = event => {
+  const closeModal = (event) => {
     const target = event.target;
 
     if (
       target === modalElem ||
       (btnClose && target.closest(btnClose)) ||
-      event.code === 'Escape'
-      ) {
-
+      event.code === "Escape"
+    ) {
       modalElem.style.opacity = 0;
 
       setTimeout(() => {
-        modalElem.style.visibility = 'hidden';
+        modalElem.style.visibility = "hidden";
         scrollController.enabledScroll();
       }, time);
 
-      window.removeEventListener('keydown', closeModal);
+      window.removeEventListener("keydown", closeModal);
     }
-  }
+  };
 
   const openModal = () => {
-    modalElem.style.visibility = 'visible';
+    modalElem.style.visibility = "visible";
     modalElem.style.opacity = 1;
-    window.addEventListener('keydown', closeModal);
+    window.addEventListener("keydown", closeModal);
     scrollController.disabledScroll();
   };
 
-  buttonElems.forEach(btn => {
-    btn.addEventListener('click', openModal);
+  buttonElems.forEach((btn) => {
+    btn.addEventListener("click", openModal);
   });
-  if(modalElem !== null ){
-    modalElem.addEventListener('click', closeModal);
+  if (modalElem !== null) {
+    modalElem.addEventListener("click", closeModal);
   }
 };
 
 modalController({
-  modal: '.modal',
-  btnOpen: '.modal__open-btn',
-  btnClose: '.modal__close',
+  modal: ".modal",
+  btnOpen: ".modal__open-btn",
+  btnClose: ".modal__close",
 });
 /*
 Скрипт*/
@@ -132,188 +130,186 @@ navBlock.addEventListener("click", (event) => {
 });
 
 //burger
-
 const burgerBtn = document.querySelector(".header__menu-btn");
 const overtlayMenu = document.querySelector(".header-top__inner");
-burgerBtn.addEventListener("click", ({target}) => {
+// все теги a в нашем меню
+const elemMenu = document.querySelectorAll('.header__list-link');
+
+burgerBtn.addEventListener("click", ({ target }) => {
   overtlayMenu.classList.toggle("header-top__inner--active");
+})
 
-});
+
+// ВОТ ПЕРЕБИРАЮ ВСЕ ТЕГИ A, ЧТОБ ПОВЕСИТЬ ОБРАБОТЧИК.
+// elemMenu.forEach((item)=>{
+//   item.addEventListener('click',()=>{
+//     overtlayMenu.classList.remove("header-top__inner--active");
+//   })
 
 
+//   })
 
 // email
-
-
 // телефон заполнить полностью
 let phoneText = false;
 // емайл заполнить полностью
 let emailText = false;
 
-var h_form_btn = document.querySelectorAll('.btn-send');
+var h_form_btn = document.querySelectorAll(".btn-send");
 
 h_form_btn.forEach(function (item) {
-    formReadyClick(item);
+  formReadyClick(item);
 });
 
-function formReadyClick (btn) {
+function formReadyClick(btn) {
+  let form = btn.closest("form");
 
-    let form = btn.closest("form");
+  form.addEventListener("submit", formSendAsync2, { once: false });
 
-    form.addEventListener("submit", formSendAsync2, {once: false});
+  async function formSendAsync2(e) {
+    e.preventDefault(); // запрет на отправку стандартной формы
 
-    async function formSendAsync2(e){
-
-        e.preventDefault(); // запрет на отправку стандартной формы
-
-        formSendAsync(btn);
-    }
+    formSendAsync(btn);
+  }
 }
 
+async function formSendAsync(btn_child) {
+  let form = btn_child.closest("form");
 
+  let error = formValidate(form);
 
-async function formSendAsync(btn_child){
+  let formData = new FormData(form);
 
-    let form = btn_child.closest("form");
+  if (error === 0) {
+    form.classList.add("_sending");
+    let response = await fetch("../callback-request/index.php", {
+      method: "POST",
+      body: formData,
+    });
+    if (response.ok) {
+      let result = await response.json();
 
-    let error = formValidate(form);
+      form.reset();
+      form.classList.remove("_sending");
 
-    let formData = new FormData(form);
-
-    if(error === 0){
-
-        form.classList.add('_sending');
-        let response = await fetch('../callback-request/index.php', {
-           method: 'POST',
-            body: formData
-        });
-        if(response.ok){
-            let result = await response.json();
-
-            form.reset();
-            form.classList.remove('_sending');
-
-            return true;
-
-        } else {
-            alert("ошибка");
-        }
-
+      return true;
     } else {
-        if(phoneText){
-            alert('Введите ещё цифры телефона');
-        } else if(emailText)  {
-            alert('Введите емайл полностью');
-        } else {
-            alert('заполните поля');
-        }
+      alert("ошибка");
     }
-    return false;
+  } else {
+    if (phoneText) {
+      alert("Введите ещё цифры телефона");
+    } else if (emailText) {
+      alert("Введите емайл полностью");
+    } else {
+      alert("заполните поля");
+    }
+  }
+  return false;
 }
 
 // проверка на ошибки
-function formValidate(form){
-    let error = 0;
+function formValidate(form) {
+  let error = 0;
 
-    let formReq = form.getElementsByClassName('_req');
+  let formReq = form.getElementsByClassName("_req");
 
-    for (let index = 0; index < formReq.length; index++){
-        const input = formReq[index];
-        formRemoveError(input); // убрать класс проверки
+  for (let index = 0; index < formReq.length; index++) {
+    const input = formReq[index];
+    formRemoveError(input); // убрать класс проверки
 
-        if(input.classList.contains('_email')){
-            if(emailTest(input)){
-                formAddError(input);
-                error++;
-            }
-        }
-        else if(input.classList.contains('input__mask')){
-            if(phoneTest(input)){
-                formAddError(input);
-                error++;
-                phoneText = true;
-            }
-        }
-        else if(input.getAttribute("type") === "checkbox" && input.checked === false){
-            formAddError(input);
-            error++;
-        } else {
-            if(input.value === ''){
-                formAddError(input);
-                error++;
-            }
-        }
+    if (input.classList.contains("_email")) {
+      if (emailTest(input)) {
+        formAddError(input);
+        error++;
+      }
+    } else if (input.classList.contains("input__mask")) {
+      if (phoneTest(input)) {
+        formAddError(input);
+        error++;
+        phoneText = true;
+      }
+    } else if (
+      input.getAttribute("type") === "checkbox" &&
+      input.checked === false
+    ) {
+      formAddError(input);
+      error++;
+    } else {
+      if (input.value === "") {
+        formAddError(input);
+        error++;
+      }
     }
-    return error;
+  }
+  return error;
 }
 // добавляют родители и элементу класс _error
-function formAddError(input){
-    input.parentElement.classList.add('_error');
-    input.classList.add('_error');
+function formAddError(input) {
+  input.parentElement.classList.add("_error");
+  input.classList.add("_error");
 }
-function formRemoveError(input){
-    input.parentElement.classList.remove('_error');
-    input.classList.remove('_error');
+function formRemoveError(input) {
+  input.parentElement.classList.remove("_error");
+  input.classList.remove("_error");
 }
 
 // проверка emai
-function emailTest(input){
-    emailText = true;
-    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+function emailTest(input) {
+  emailText = true;
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 }
 
 // проверка телефона
-function phoneTest(input){
-    if(input.value.replace(/ +/g, ' ').trim() === "+7" ||
-       input.value === '' ||
-       input.value.replace(/[\+\(\)\s]/g,"").length < 10
-      ){
-
-       return true ;
-    }
-
-    return false;
-}
-
-  const formImage = document.getElementById('quiz__file');
-  const formPreview = document.querySelector('.input__file-button-text');
-
-  if(formImage){
-      formImage.addEventListener('change', () => {
-          uploadFile(formImage.files[0]);
-      });
+function phoneTest(input) {
+  if (
+    input.value.replace(/ +/g, " ").trim() === "+7" ||
+    input.value === "" ||
+    input.value.replace(/[\+\(\)\s]/g, "").length < 10
+  ) {
+    return true;
   }
 
-function uploadFile(file){
+  return false;
+}
 
-    if(file.size > 4 * 1024 * 1024){
-        alert('файл должен быть менее 4мб');
-        return;
-    }
+const formImage = document.getElementById("quiz__file");
+const formPreview = document.querySelector(".input__file-button-text");
 
-    var reader = new FileReader();
+if (formImage) {
+  formImage.addEventListener("change", () => {
+    uploadFile(formImage.files[0]);
+  });
+}
 
-    reader.onload = function (e){
-        formPreview.innerHTML = `<span style="color: #f28d55;">Файл добавлен</span>`;
-    }
-    reader.onerror = function (e){
-        alert('Ошибка');
-    };
-    reader.readAsDataURL(file);
+function uploadFile(file) {
+  if (file.size > 4 * 1024 * 1024) {
+    alert("файл должен быть менее 4мб");
+    return;
+  }
 
+  var reader = new FileReader();
+
+  reader.onload = function (e) {
+    formPreview.innerHTML = `<span style="color: #f28d55;">Файл добавлен</span>`;
+  };
+  reader.onerror = function (e) {
+    alert("Ошибка");
+  };
+  reader.readAsDataURL(file);
 }
 
 // якоря
-const anchors = document.querySelectorAll('a[href*="#"]')
+const anchors = document.querySelectorAll('a[href*="#"]');
 for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
 
-    const blockID = anchor.getAttribute('href').substr(1)
+    const blockID = anchor.getAttribute("href").substr(1);
 
     document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  })
+      behavior: "smooth",
+      block: "start",
+    });
+  });
 }
