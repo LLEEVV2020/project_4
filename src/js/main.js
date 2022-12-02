@@ -113,27 +113,35 @@ var country = {
 
   item1:{
       name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;11",
+      text: "Here 11 can be&nbsp;a&nbsp;text about this project…"
   },
   item2:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;12",
+    text: "Here 12 can be&nbsp;a&nbsp;text about this project…"
   },
   item3:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;13",
+    text: "Here 13 can be&nbsp;a&nbsp;text about this project…"
   },
   item4:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;14",
+    text: "Here 14 can be&nbsp;a&nbsp;text about this project…"
   },
   item5:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;15",
+    text: "Here 15 can be&nbsp;a&nbsp;text about this project…"
   },
   item6:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;16",
+    text: "Here 16 can be&nbsp;a&nbsp;text about this project…"
   },
   item7:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;17",
+    text: "Here 17 can be&nbsp;a&nbsp;text about this project…"
   },
   item8:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;18",
+    text: "Here 18 can be&nbsp;a&nbsp;text about this project…"
   }
 
 };
@@ -176,6 +184,8 @@ navBlock.addEventListener("click", (event) => {
     let interior__title = document.querySelector(".g-project__title");
     interior__title.innerHTML = country[filterClass].name;
 
+    let g_project__descr = document.querySelector(".g-project__descr");
+    g_project__descr.innerHTML = country[filterClass].text;
 
 
   });
