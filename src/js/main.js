@@ -111,19 +111,19 @@ modalController({
 
 var country = {
 
-  item1:{
+  alizarin:{
       name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;11",
       text: "Here 11 can be&nbsp;a&nbsp;text about this project…"
   },
-  item2:{
+  wisteria:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;12",
     text: "Here 12 can be&nbsp;a&nbsp;text about this project…"
   },
-  item3:{
+  emerland:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;13",
     text: "Here 13 can be&nbsp;a&nbsp;text about this project…"
   },
-  item4:{
+  sunflower:{
     name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;14",
     text: "Here 14 can be&nbsp;a&nbsp;text about this project…"
   },
