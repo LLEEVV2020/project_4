@@ -162,7 +162,7 @@
 
   }
   &::after{
-    content: "A 11";
+    content: attr(data-title);
 
     font-style: normal;
     font-weight: 400;
