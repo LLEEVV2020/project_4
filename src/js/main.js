@@ -314,3 +314,34 @@ for (let anchor of anchors) {
     });
   });
 }
+
+
+//авто подсказка
+
+const processHide = document.querySelector('.process__item-hide');
+const closeHide = document.querySelectorAll('.process__item-hide__btn')
+
+const cardsList = document.querySelector('.process-items');
+
+
+
+
+
+cardsList.addEventListener('click', ({target}) => {
+  const modals = cardsList.querySelectorAll('.process__item-hide');
+  if (target.closest('.process-items__item')) {
+    modals.forEach(modal => {
+        modal.classList.remove('open');
+      })
+    const card = target.closest('.process-items__item');
+    const modal = card.querySelector('.process__item-hide');
+    modal.classList.add('open');
+  }
+
+  if (!target.closest('.process-items__item')) {
+      modals.forEach(modal => {
+        modal.classList.remove('open');
+      })
+  }
+});
+
