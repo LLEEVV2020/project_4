@@ -25,6 +25,10 @@ spaceBetween: 30,
     el: ".swiper-pagination",
     clickable: true,
   },
+  navigation: {
+    nextEl: ".swiperbn1",
+    prevEl: ".swiperbn2",
+  }
 });
 // modal window
 
@@ -325,23 +329,25 @@ const cardsList = document.querySelector('.process-items');
 
 
 
-
-
-cardsList.addEventListener('click', ({target}) => {
-  const modals = cardsList.querySelectorAll('.process__item-hide');
-  if (target.closest('.process-items__item')) {
-    modals.forEach(modal => {
-        modal.classList.remove('open');
-      })
-    const card = target.closest('.process-items__item');
-    const modal = card.querySelector('.process__item-hide');
-    modal.classList.add('open');
-  }
-
-  if (!target.closest('.process-items__item')) {
+if( cardsList !== null){
+  cardsList.addEventListener('click', ({target}) => {
+    const modals = cardsList.querySelectorAll('.process__item-hide');
+    if (target.closest('.process-items__item')) {
       modals.forEach(modal => {
-        modal.classList.remove('open');
-      })
-  }
-});
+          modal.classList.remove('open');
+        })
+      const card = target.closest('.process-items__item');
+      const modal = card.querySelector('.process__item-hide');
+      modal.classList.add('open');
+    }
+
+    if (!target.closest('.process-items__item')) {
+        modals.forEach(modal => {
+          modal.classList.remove('open');
+        })
+    }
+  });
+
+}
+
 
