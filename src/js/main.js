@@ -107,6 +107,46 @@ modalController({
   btnOpen: ".modal__open-btn",
   btnClose: ".modal__close",
 });
+
+
+var country = {
+
+  item1:{
+      name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;11",
+  },
+  item2:{
+    name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;12",
+  },
+  item3:{
+    name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;13",
+  },
+  item4:{
+    name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;14",
+  },
+  item5:{
+    name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;15",
+  },
+  item6:{
+    name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;16",
+  },
+  item7:{
+    name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;17",
+  },
+  item8:{
+    name: "<span class='interior__title-span'> Interior design / Project </span>/A&nbsp;18",
+  }
+
+};
+
+
+/*
+console.log("Столица: " + country.capital.name);
+console.log("Население: " + country["capital"]["population"]);
+console.log("Год основания: " + country.capital["year"]);
+*/
+
+
+
 /*
 Скрипт*/
 const filterBox = document.querySelectorAll(".box");
@@ -131,6 +171,13 @@ navBlock.addEventListener("click", (event) => {
     if (!elem.classList.contains(filterClass) && filterClass !== "all") {
       elem.classList.add("hide");
     }
+
+
+    let interior__title = document.querySelector(".g-project__title");
+    interior__title.innerHTML = country[filterClass].name;
+
+
+
   });
 });
 
