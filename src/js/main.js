@@ -16,7 +16,7 @@ const swiper = new Swiper(".slider-container", {
 
 let swiper3 = new Swiper(".mySwiper", {
   slidesPerView: 2,
-spaceBetween: 30,
+  spaceBetween: 30,
   grid: {
     rows: 3,
   },
@@ -309,9 +309,7 @@ const anchors = document.querySelectorAll('a[href*="#"]');
 for (let anchor of anchors) {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-
     const blockID = anchor.getAttribute("href").substr(1);
-
     document.getElementById(blockID).scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -324,27 +322,26 @@ for (let anchor of anchors) {
 
 const processHide = document.querySelector('.process__item-hide');
 const closeHide = document.querySelectorAll('.process__item-hide__btn')
-
 const cardsList = document.querySelector('.process-items');
 
 
 
-if( cardsList !== null){
-  cardsList.addEventListener('click', ({target}) => {
+if (cardsList !== null) {
+  cardsList.addEventListener('click', ({ target }) => {
     const modals = cardsList.querySelectorAll('.process__item-hide');
     if (target.closest('.process-items__item')) {
       modals.forEach(modal => {
-          modal.classList.remove('open');
-        })
+        modal.classList.remove('open');
+      })
       const card = target.closest('.process-items__item');
       const modal = card.querySelector('.process__item-hide');
       modal.classList.add('open');
     }
 
     if (!target.closest('.process-items__item')) {
-        modals.forEach(modal => {
-          modal.classList.remove('open');
-        })
+      modals.forEach(modal => {
+        modal.classList.remove('open');
+      })
     }
   });
 
