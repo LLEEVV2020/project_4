@@ -15,11 +15,9 @@ const swiper = new Swiper(".slider-container", {
 });
 
 let swiper3 = new Swiper(".mySwiper", {
-  slidesPerView: 2,
-  spaceBetween: 30,
-  grid: {
-    rows: 3,
-  },
+  slidesPerView: 1,
+  grid: false,
+  spaceBetween: 0,
   //spaceBetween: 0,
   pagination: {
     el: ".swiper-pagination",
@@ -28,7 +26,26 @@ let swiper3 = new Swiper(".mySwiper", {
   navigation: {
     nextEl: ".swiperbn1",
     prevEl: ".swiperbn2",
+  },
+  grid: {
+    rows: 4,
+  },
+
+
+  breakpoints: {
+    // when window width is >= 320px
+    900: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      grid: {
+        rows: 3,
+      },
+      //spaceBetween: 0,
+
+    },
+
   }
+
 });
 // modal window
 
