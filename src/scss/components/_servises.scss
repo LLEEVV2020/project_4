@@ -153,8 +153,12 @@
   }
 
 }
-
-@media(max-width:769px) {
+@media(max-width:959px) {
+  .servises__wrapper-galery{
+    column-gap: 20px;
+  }
+}
+@media(max-width:729px) {
   .servises {
     &-container {
       padding: 0;
